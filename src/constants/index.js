@@ -1,5 +1,5 @@
 export const API = {
-  BASE: "https://acn-bootcamp.herokuapp.com/api/v1/",
+  BASE: "api/v1/",
   LOGIN: "auth/session",
   REGISTER: "auth/users",
   USER_INFO: "users/self",

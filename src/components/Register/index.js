@@ -10,7 +10,8 @@ class Register extends Component {
   onChange = event =>
     this.setState({ [event.target.name]: event.target.value });
 
-  handleRegister = () => {
+  handleRegister = e => {
+    e.preventDefault();
     const { email, password, username } = this.state;
 
     this.props.register(email, username, password).then(() => {
