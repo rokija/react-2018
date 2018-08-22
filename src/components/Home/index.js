@@ -1,31 +1,45 @@
-import React, { Component } from 'react'
-import Posts from '../Posts'
-import UserList from '../UserList'
-import Header from '../Header'
-import PostModal from '../PostModal'
-import LightBox from '../LightBox'
+import React, { Component } from "react";
+import Posts from "../Posts";
+import UserList from "../UserList";
+import Header from "../Header";
+import PostModal from "../PostModal";
+import LightBox from "../LightBox";
 
 class Home extends Component {
-  state = {
-    isModalOpen: false
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isModalOpen: false
+    };
+
+    props.validateToken();
   }
 
-  handleOpenModal = () => {
-    this.setState({ isModalOpen: true })
-  }
+  componentDidUpdate() {
+    const { loginReducer } = this.props;
 
-  handleCloseModal = () => {
-    this.setState({ isModalOpen: false })
-  }
-
-  handleClickOutside = event => {
-    if (event.target.id === 'lightbox') {
-      this.setState({ isModalOpen: false })
+    if (!loginReducer.isLogged) {
+      this.props.history.push("/login");
     }
   }
 
+  handleOpenModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ isModalOpen: false });
+  };
+
+  handleClickOutside = event => {
+    if (event.target.id === "lightbox") {
+      this.setState({ isModalOpen: false });
+    }
+  };
+
   render() {
-    const { isModalOpen } = this.state
+    const { isModalOpen } = this.state;
 
     return (
       <div className="container">
@@ -45,8 +59,8 @@ class Home extends Component {
           </LightBox>
         ) : null}
       </div>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

@@ -7,8 +7,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import rootReducer from "./reducers";
-import Home from "./components/Home";
+import Home from "./containers/Home";
 import Login from "./containers/Login";
+import Register from "./containers/Register";
 import registerServiceWorker from "./registerServiceWorker";
 
 const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk));
@@ -21,6 +22,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
           </Switch>
         </Router>
       </Provider>
