@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Posts from "../Posts";
+import Posts from "../../containers/Posts";
 import UserList from "../UserList";
 import Header from "../Header";
-import PostModal from "../PostModal";
+import PostModal from "../../containers/PostModal";
 import LightBox from "../LightBox";
 
 class Home extends Component {
