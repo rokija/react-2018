@@ -52,7 +52,6 @@ class Home extends Component {
             <UserList />
           </div>
         </div>
-        {console.log(this)}
         {isModalOpen ? (
           <LightBox handleClickOutside={this.handleClickOutside}>
             <PostModal handleCloseModal={this.handleCloseModal} />

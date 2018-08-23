@@ -1,5 +1,9 @@
-import React from 'react'
-import './index.css'
+import React from "react";
+import "./index.css";
+
+export const sum = (a, b) => {
+  return a + b;
+};
 
 const PostCard = ({ image, title, text }) => (
   <div className="col-12">
@@ -11,6 +15,6 @@ const PostCard = ({ image, title, text }) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default PostCard
+export default PostCard;

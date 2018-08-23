@@ -27,9 +27,15 @@ class PostModal extends Component {
     e.preventDefault();
     const { formData, caption } = this.state;
     this.props.submitPost(formData, caption).then(() => {
-      console.log(this.props)
-    })
+      this.props.getPosts();
+    });
   };
+
+  componentDidUpdate() {
+    if (this.props.postsReducer.isSubmitted) {
+      this.props.handleCloseModal();
+    }
+  }
 
   onChange = e => this.setState({ caption: e.target.value });
 

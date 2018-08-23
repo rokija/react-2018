@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PostCard from "../PostCard";
-import image from "../../media/image-placeholder.svg";
 
 class Posts extends Component {
   componentDidMount() {
